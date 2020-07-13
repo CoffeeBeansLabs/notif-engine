@@ -1,0 +1,36 @@
+{
+  "name": "notif-engine",
+  "version": "1.0.0",
+  "description": "Notification Engine",
+  "keywords": [
+    "notification",
+    "push",
+    "mail",
+    "sms",
+    "inapp"
+  ],
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mongodb": "3.5.9",
+    "nodemailer": "6.4.10",
+    "onesignal-node": "3.0.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoffeeBeansLabs/notif-engine.git"
+  },
+  "author": "Ishan Sheth",
+  "license": "MIT",
+  "engines": {
+    "node": "14.1"
+  },
+  "bugs": {
+    "url": "https://github.com/CoffeeBeansLabs/notif-engine/issues"
+  },
+  "homepage": "https://github.com/CoffeeBeansLabs/notif-engine#readme"
+}
