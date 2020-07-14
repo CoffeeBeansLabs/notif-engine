@@ -24,7 +24,7 @@
     "type": "git",
     "url": "git+https://github.com/CoffeeBeansLabs/notif-engine.git"
   },
-  "author": "Ishan Sheth",
+  "author": "Ishan Sheth <contact@imsheth.com>",
   "license": "MIT",
   "engines": {
     "node": "14.1"
