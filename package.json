@@ -1,5 +1,5 @@
 {
-  "name": "notif-engine",
+  "name": "@coffeebeanslabs/notif-engine",
   "version": "1.0.0",
   "description": "Notification Engine",
   "keywords": [
