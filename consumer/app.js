@@ -2,7 +2,7 @@ const NotificationFactory = require('./factories/notificationFactory.js');
 const MongoClient = require('mongodb').MongoClient;
 const NotificationConfig = require('./configurations/configuration.json');
 const NOTIFICATION_STATUSES = NotificationConfig.statuses;
-let TIMEOUT = 1000;
+let TIMEOUT = 1000*60*5;
 
 // Processing the notifications based on their type
 const sendTypeBasedNotifications = async (notification) => {

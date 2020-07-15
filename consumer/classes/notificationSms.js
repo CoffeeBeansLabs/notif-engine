@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-notificationSms() = () => {
+notificationSms = () => {
 };
 
 notificationSms.prototype = {
