@@ -3,8 +3,8 @@ const MongoClient = require('mongodb').MongoClient;
 const NotificationConfig = require('../configurations/configuration.json');
 const NOTIFICATION_STATUSES = NotificationConfig.statuses;
 
-function notificationMail() {
-}
+notificationMail = () => {
+};
 
 notificationMail.prototype = {
   // Send notification by PROCESSING => sendMail => SENDING_SUCCEEDED or SENDING_FAILED

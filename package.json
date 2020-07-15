@@ -9,9 +9,8 @@
     "sms",
     "inapp"
   ],
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
     "test": "echo \"Error: no test specified\" "
   },
   "dependencies": {

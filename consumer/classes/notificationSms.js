@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 
-function notificationSms() {
-}
+notificationSms() = () => {
+};
 
 notificationSms.prototype = {
   sendNotification: (notification) => {
@@ -10,7 +10,7 @@ notificationSms.prototype = {
       switch (notification.provider) {
         case 'upcoming':
           // Implementation for amazonses as mail notifications provider
-          
+
           resolve({});
           break;
         default:
