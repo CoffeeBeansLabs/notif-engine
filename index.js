@@ -30,6 +30,37 @@ createMail = async (notification) => {
   });
 };
 
+createNotificationTransaction = async (notificationTransaction) => {
+  return new Promise(async (resolve, reject) => {
+    // Verify
+    if (notificationTransaction.mongo.MONGOURL && notificationTransaction.mongo.DATABASE_NAME && notificationTransaction.mongo.SCHEMA_NAME) {
+      // Connect
+      const mongoClient = await MongoClient.connect(notificationTransaction.mongo.MONGOURL, {
+        useUnifiedTopology: true
+      });
+
+      try {
+        // Insert
+        const db = mongoClient.db(notificationTransaction.mongo.DATABASE_NAME);
+        const createNotificationTransactionResult = await db.collection(notificationTransaction.mongo.SCHEMA_NAME).insertOne(notificationTransaction.data);
+        // console.log('notif-engine.createNotificationTransaction.mongo.result ', notificationTransaction.data.id, ' ', notificationTransaction.data.email);
+        resolve(createNotificationTransactionResult);
+      } catch (error) {
+        // Catch all errors
+        console.log('notif-engine.createNotificationTransaction.mongo.error ', error);
+        reject({ message: 'notif-engine.createNotificationTransaction.error ', data: error });
+      } finally {
+        // Disconnect
+        mongoClient.close();
+      }
+    } else {
+      console.log('notif-engine.createNotificationTransaction.badRequest.error ', error);
+      reject({ message: 'Improper credentials, notif-engine.createMail.badRequest.error' });
+    }
+  });
+};
+
 module.exports = {
+  createNotificationTransaction: createNotificationTransaction,
   createMail: createMail
 };
