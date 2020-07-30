@@ -126,6 +126,10 @@ notificationMail.prototype = {
             newGeneratedMail.service_response = null;
             newGeneratedMail.try_count = 0;
 
+            const currentTimestamp = new Date();
+            newGeneratedMail.db_created_at = currentTimestamp.getTime();
+            newGeneratedMail.db_updated_at = currentTimestamp.getTime();
+
             generatedMails.push(newGeneratedMail);
           });
 
