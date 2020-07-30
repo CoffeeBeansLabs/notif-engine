@@ -62,6 +62,12 @@ notificationPush.prototype = {
           break;
       }
     });
+  },
+  // TODO : Create notifications for sending
+  createNotification: (notification) => {
+    return new Promise(async (resolve, reject) => {
+      resolve({});
+    });
   }
 }
 

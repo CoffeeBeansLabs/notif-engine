@@ -10,7 +10,8 @@
       "database_name": "<database_name_here>",
       "schema_name": "<schema_name_here>",
       "batch_size": 100,
-      "max_retries": 3
+      "max_retries": 3,
+      "from_string": "'Full Name' <email@address.com>"
     },
     "sms": {
       "database_name": "<database_name_here>",
@@ -27,10 +28,25 @@
       "max_retries": 3
     }
   },
+  "base": {
+    "template": {
+      "database_name": "<database_name_here>",
+      "schema_name": "<schema_name_here>"
+    },
+    "transaction": {
+      "database_name": "<database_name_here>",
+      "schema_name": "<schema_name_here>",
+      "batch_size": 100
+    }
+  },
   "statuses": {
     "SENDING_FAILED": -2, 
     "NOT_PROCESSED": -1, 
     "PROCESSING": 0, 
     "SENDING_SUCCEEDED": 1
+  },
+  "enabled_flags": {
+    "ENABLED": 1, 
+    "DISABLED": 0
   }
 }
