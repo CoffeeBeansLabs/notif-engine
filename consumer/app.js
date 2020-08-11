@@ -138,6 +138,7 @@ const createNotifications = async (notificationConfig) => {
   Promise.all(fetchToBeSentNotificationsPromises).then(async (toBeSentNotificationsResult) => {
     // console.log('createNotifications.toBeSentNotificationsResult ', toBeSentNotificationsResult);
     await processNotifications(toBeSentNotificationsResult.flat());
+    readNotifications(notificationConfig);
     // client.close();
   }).catch((toBeSentNotificationsError) => {
     console.log('createNotifications.toBeSentNotificationsError ', toBeSentNotificationsError);
@@ -151,12 +152,13 @@ const createNotifications = async (notificationConfig) => {
 
 // Entry point
 const startNotifEngine = async () => {
+  console.log('\nengine booting up at ', new Date().toString());
   // Execute after every TIMEOUT ms
   setInterval(() => {
     console.log('\nengine iteration invoked at ', new Date().toString());
     console.time('iteration_time');
     createNotifications(NotificationConfig);
-    readNotifications(NotificationConfig);
+    // readNotifications(NotificationConfig);
     console.log('\nengine iteration returned at ', new Date().toString());
     console.timeEnd('iteration_time');
   }, TIMEOUT);
