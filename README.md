@@ -42,5 +42,8 @@ Then add, commit, push to your repo and finally send a [pull request](https://he
 [Feel free to open an issue](https://github.com/CoffeeBeansLabs/notif-engine/issues).
 
 
-## Vote of thanks
+## Vote of thanks to the community for
+- [MongoDB Node.JS Driver](https://www.npmjs.com/package/mongodb)
+- [Nodemailer](https://www.npmjs.com/package/nodemailer)
+- [onesignal-node](https://www.npmjs.com/package/onesignal-node)
 - [Sindre Sorhus](https://github.com/sindresorhus) for the amazing module [np](https://www.npmjs.com/package/np). This module has been of immense help, making ```npm publish``` easy and blazing fast.
