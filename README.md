@@ -6,7 +6,7 @@ The 'notif-engine' is a 'npm module' to store notifications before sending them 
 - [How to use](#how-to-use)
 - [Contributing](#contributing)
 - [Need help? Found a bug?](#need-help-found-a-bug-feature-request)
-- [Vote of thanks](#vote-of-thanks)
+- [Vote of thanks to the community for](#vote-of-thanks-to-the-community-for)
 
 ## Features
 
