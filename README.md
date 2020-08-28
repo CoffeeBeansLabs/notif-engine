@@ -5,7 +5,7 @@ The 'notif-engine' is a 'npm module' to store notifications before sending them 
 - [Features](#features)
 - [How to use](#how-to-use)
 - [Contributing](#contributing)
-- [Need help? Found a bug?](#need-help-found-a-bug)
+- [Need help? Found a bug?](#need-help-found-a-bug-feature-request)
 - [Vote of thanks](#vote-of-thanks)
 
 ## Features
@@ -37,9 +37,9 @@ $ git clone git@github.com:[YOUR_USERNAME]/notif-engine.git && cd notif-engine &
 Then add, commit, push to your repo and finally send a [pull request](https://help.github.com/articles/creating-a-pull-request/)
 
 
-## Need Help? Found a bug?
+## Need Help? Found a bug? Feature Request?
 
-[Submit an issue](https://github.com/CoffeeBeansLabs/notif-engine/issues) if you need any help.
+[Feel free to open an issue](https://github.com/CoffeeBeansLabs/notif-engine/issues).
 
 
 ## Vote of thanks
