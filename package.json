@@ -1,13 +1,26 @@
 {
   "name": "@coffeebeanslabs/notif-engine",
   "version": "1.0.7",
-  "description": "Notification Engine",
+  "description": "The 'notif-engine' is a 'npm module' to store notifications before sending them in the supported data stores and then send them through supported providers; nevertheless it updates the status of sending the notifications in your data store.",
   "keywords": [
-    "notification",
+    "notif-engine",
+    "notifications",
     "push",
-    "mail",
+    "push-notifications",
+    "email",
+    "email-notifications",
     "sms",
-    "inapp"
+    "sms-notifications",
+    "webpush",
+    "webpush-notifications",
+    "inapp",
+    "inapp-notifications",
+    "slack",
+    "slack-notifications",
+    "nodejs",
+    "npm-module",
+    "javascript",
+    "javascript-modules"
   ],
   "main": "index.js",
   "scripts": {
