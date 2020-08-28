@@ -1,5 +1,7 @@
 # notif-engine
 
+The 'notif-engine' is a 'npm module' to store notifications before sending them in the supported data stores and then send them through supported providers; nevertheless it updates the status of sending the notifications in your data store.
+
 - [Features](#features)
 - [How to use](#how-to-use)
 - [Contributing](#contributing)
