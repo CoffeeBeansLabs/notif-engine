@@ -18,7 +18,22 @@ The 'notif-engine' is an 'npm module' to store notifications before sending them
 
 ## How to use
 
+### Installation
+
+#### Via npm
+
+```shell
+$ npm i @coffeebeanslabs/notif-engine
+```
+
+#### Via yarn
+
+```shell
+$ yarn add @coffeebeanslabs/notif-engine
+```
+
 ### Concepts for entities involved
+
 #### Templates
 
 - The templates provide a mechanism to configure a base for each supported channel which will be string replaced by the data in transactions to generate the actual data that will be stored in the respective collections of that respective channel and this actual data stored will be used to send the notification via the configured service provider
@@ -78,12 +93,24 @@ db.getCollection('<schema_name_here>').insertOne({
 
 ## Contributing
 
+### Pull requests
 And, of course, feel free to submit pull requests with bug fixes/changes/feature additions. All contributions are always welcomed!
 
 To get started: [fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device.
 
 ```shell
 $ git clone git@github.com:[YOUR_USERNAME]/notif-engine.git && cd notif-engine && npm install
+```
+
+### [Publish on npm](https://www.npmjs.com/package/np)
+```shell
+$ np
+```
+
+### [Publish on yarn](https://classic.yarnpkg.com/en/docs/publishing-a-package/)
+```shell
+$ yarn publish
+$ yarn info @coffeebeanslabs/notif-engine // for package info
 ```
 
 Then add, commit, push to your repo and finally send a [pull request](https://help.github.com/articles/creating-a-pull-request/)
