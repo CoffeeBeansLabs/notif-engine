@@ -19,11 +19,13 @@ The 'notif-engine' is an 'npm module' to store notifications before sending them
 ## How to use
 
 ### Concepts for entities involved
-<details><summary>Templates </summary><p>
+#### Templates
 
 - The templates provide a mechanism to configure a base for each supported channel which will be string replaced by the data in transactions to generate the actual data that will be stored in the respective collections of that respective channel and this actual data stored will be used to send the notification via the configured service provider
 - [Reference for designing html email templates](https://templates.mailchimp.com/development/html/)
 - [Reference for designing push templates for onesignal](https://documentation.onesignal.com/reference/create-notification)
+- HTML output for the ```en``` email template below
+![notif-engine-email-template-preview](https://raw.githubusercontent.com/CoffeeBeansLabs/notif-engine/master/meta/img/notif-engine-email-template-preview.png)
 - Setting up test data for templates manually
   - <schema_name_here> is the collection which stores templates data and has to be configured in ```consumer/configurations/configuration.json``` for using the module
 ```javascript
@@ -67,8 +69,6 @@ db.getCollection('<schema_name_here>').insertOne({
     "is_enabled" : 1
 });
 ```
-
-</p></details>
 
 ### Turning on the notif-engine consumer process
 
