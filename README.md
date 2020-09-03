@@ -20,13 +20,13 @@ The 'notif-engine' is an 'npm module' to store notifications before sending them
 
 ### Installation
 
-#### Via npm
+#### [Via npm](https://www.npmjs.com/package/@coffeebeanslabs/notif-engine)
 
 ```shell
 $ npm i @coffeebeanslabs/notif-engine
 ```
 
-#### Via yarn
+#### [Via yarn](https://classic.yarnpkg.com/en/package/@coffeebeanslabs/notif-engine)
 
 ```shell
 $ yarn add @coffeebeanslabs/notif-engine
