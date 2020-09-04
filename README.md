@@ -37,12 +37,34 @@ $ yarn add @coffeebeanslabs/notif-engine
 #### Templates
 
 - The templates provide a mechanism to configure a base for each supported channel which will be string replaced by the data in transactions to generate the actual data that will be stored in the respective collections of that respective channel and this actual data stored will be used to send the notification via the configured service provider
-- [Reference for designing html email templates](https://templates.mailchimp.com/development/html/)
+- [Reference for designing email templates](https://nodemailer.com/message/)
+- [Reference for designing html inside the email templates](https://templates.mailchimp.com/development/html/)
 - [Reference for designing push templates for onesignal](https://documentation.onesignal.com/reference/create-notification)
 - HTML output for the ```en``` email template below
 ![notif-engine-email-template-preview](https://raw.githubusercontent.com/CoffeeBeansLabs/notif-engine/master/meta/img/notif-engine-email-template-preview.png)
 - Setting up test data for templates manually
-  - <schema_name_here> is the collection which stores templates data and has to be configured in ```consumer/configurations/configuration.json``` for using the module
+  - ```<schema_name_here>``` is the collection which stores templates data and has to be configured in ```consumer/configurations/configuration.json``` for using the module
+  - ```slug``` identifier for the template, as database primary keys/id keys may change but this will always be consistent for retrieval
+  - ```name``` human readable string for describing the template
+  - ```inapp_template``` inapp notification template for the template in consideration
+  - ```email_template``` email notification template for the template in consideration
+  - ```email_template.provider``` email notification provider
+  - ```email_template.subject``` email notification subject which supports multiple languages as keys with values of text in that language(can be string replaced to personalize/customize)
+  - ```email_template.html``` email notification html/content which supports multiple languages as keys with values of text in that language(can be string replaced to personalize/customize)
+  - ```email_template.attachments``` email notification attachments as supported by [nodemailer](https://nodemailer.com/message/attachments/)
+  - ```push_template``` push notification template for the template in consideration
+  - ```push_template.provider``` push notification provider
+  - ```push_template.headings``` push notification heading which supports multiple languages as keys with values of text in that language(can be string replaced to personalize/customize)
+  - ```push_template.subtitle``` push notification subtitle which supports multiple languages as keys with values of text in that language(can be string replaced to personalize/customize)
+  - ```push_template.contents``` push notification contents which supports multiple languages as keys with values of text in that language(can be string replaced to personalize/customize)
+  - ```push_template.url``` push notification hyperlink to open (external url or internal deep links to the app)
+  - ```push_template.android_accent_color``` push notification accent color for android devices
+  - ```push_template.huawei_accent_color``` push notification accent color for huawei devices
+  - ```push_template.android_led_color``` push notification led color for android devices
+  - ```push_template.huawei_led_color``` push notification led color for huawei devices
+  - ```sms_template``` sms notification template for the template in consideration
+  - ```is_enabled``` switch for turning on/off the usage of template in consideration
+  
 ```javascript
 db.getCollection('<schema_name_here>').insertOne({
     "slug" : "welcome",
