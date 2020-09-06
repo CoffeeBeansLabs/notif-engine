@@ -14,6 +14,8 @@ The 'notif-engine' is an 'npm module' to store notifications before sending them
 
 * **Easy notification sending** — Send `email` | `push` through supported providers and update the status in your data store. Currently supports [Amazon Simple Email Service](https://aws.amazon.com/ses/) for emails and [OneSignal](https://onesignal.com/) for push notifications.
 
+* **Multi lingual template support** — Define templates in multiple languages and use them.
+
 * **MIT license** — Use it like you want.
 
 ## How to use
