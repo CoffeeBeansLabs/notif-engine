@@ -32,6 +32,81 @@ $ npm i @coffeebeanslabs/notif-engine
 $ yarn add @coffeebeanslabs/notif-engine
 ```
 
+#### Producing email from your code
+```javascript
+const notifEngine = require('@coffeebeanslabs/notif-engine');
+
+await notifEngine.createNotificationTransaction({
+  mongo: {
+    MONGOURL: '<your_mongourl_or_mongoclusterurls>',
+    DATABASE_NAME: '<same-as-dynamic.mail.database_name-in-consumer/configurations/configuration.json>',
+    SCHEMA_NAME: '<same-as-dynamic.mail.schema_name-in-consumer/configurations/configuration.json>',
+  },
+  data: {
+    server: '<your_operating_server_type_localhost/staging/production'>,
+    type: 'mail',
+    provider: 'amazonses',
+    trigger_event: 'create',
+    notification_template_slug: 'welcome',
+    user_id: ['your_user_ids_as_array_of_strings_for_users_targeted_in_the_notification_this_helps_for_filtering_and_reporting_purposes_only'],
+    user_email: ['your_user_email_ids_as_array_of_strings_for_users_targeted_in_the_notification_this_helps_for_filtering_and_reporting_purposes_only'],
+    data: [{
+      user_id: 'each_values_in_data.user_id_will_have_one_object_each_in_data.data',
+      user_email: 'each_values_in_data.user_email_will_have_one_object_each_in_data.data',
+      user_name: 'your_user\'s_name',
+      user_language: 'your_user\'s_language_must_be_one_of_defined_inside_the_respective_template_in_template_schema',
+      brand_name: '<your_brand_name>',
+      verification_link: '<your_verification_link>',
+      brand_url: '<your_brand_url_link>',
+      brand_url_without_protocol: '<your_brand_url_link_without_protocol>',
+      attachments: ['your_file_paths_as_array_of_strings_compatible_with_nodemailer'],
+      include_player_ids: ['your_onesignal_player_ids_targeted_in_the_notification']
+    }],
+    status: -1,
+    db_created_at: <timestamp>,
+    db_updated_at: <timestamp>
+  }
+});
+```
+
+#### Producing push from your code
+```javascript
+const notifEngine = require('@coffeebeanslabs/notif-engine');
+
+await notifEngine.createNotificationTransaction({
+  mongo: {
+    MONGOURL: '<your_mongourl_or_mongoclusterurls>',
+    DATABASE_NAME: '<same-as-dynamic.push.database_name-in-consumer/configurations/configuration.json>',
+    SCHEMA_NAME: '<same-as-dynamic.push.schema_name-in-consumer/configurations/configuration.json>',
+  },
+  data: {
+    server: '<your_operating_server_type_localhost/staging/production'>,
+    type: 'push',
+    provider: 'onesignal',
+    trigger_event: 'create',
+    notification_template_slug: 'welcome',
+    user_id: ['your_user_ids_as_array_of_strings_for_users_targeted_in_the_notification_this_helps_for_filtering_and_reporting_purposes_only'],
+    user_email: ['your_user_email_ids_as_array_of_strings_for_users_targeted_in_the_notification_this_helps_for_filtering_and_reporting_purposes_only'],
+    data: [{
+      user_id: 'each_values_in_data.user_id_will_have_one_object_each_in_data.data',
+      user_email: 'each_values_in_data.user_email_will_have_one_object_each_in_data.data',
+      user_name: 'your_user\'s_name',
+      user_language: 'your_user\'s_language_must_be_one_of_defined_inside_the_respective_template_in_template_schema',
+      brand_name: '<your_brand_name>',
+      verification_link: '<your_verification_link>',
+      brand_url: '<your_brand_url_link>',
+      brand_url_without_protocol: '<your_brand_url_link_without_protocol>',
+      attachments: ['your_file_paths_as_array_of_strings_compatible_with_nodemailer'],
+      include_player_ids: ['your_onesignal_player_ids_targeted_in_the_notification']
+    }],
+    status: -1,
+    db_created_at: <timestamp>,
+    db_updated_at: <timestamp>
+  }
+});
+```
+
+
 ### Installation for using as a consumer process
 
 #### Setting up the consumer process
