@@ -147,8 +147,8 @@ $ https://github.com/CoffeeBeansLabs/notif-engine.git && cd notif-engine && npm 
 #### tl;dr
 
 - Templates form the base content layout for all the channels and are prerequisite for the `notif-engine` to work
-- Transactions are produced from your code into the `notif-engine` to have enough data to produce the actual notifications for respective channels
-- `notif-engine` runs and creates respective channel notifications (`email` | `push`) in their specified schemas
+- Transactions are produced from your code into the `notif-engine` to have enough data to produce the actual notifications for respective channels, this is called the producer code
+- `notif-engine` runs and creates respective channel notifications (`email` | `push`) in their specified schemas, this is called the consumer code
 - For producer, the configuration is passed as parameters to the function calls
 - For consumer, the `consumer/configurations/configuration.json` is the base for the configuration and the consumer process works on this. This file is to be created manually before turning on the consumer process and a template is available for the same at `consumer/configurations/configuration.template.json`
 
