@@ -18,7 +18,7 @@ The 'notif-engine' is an 'npm module' to store notifications before sending them
 
 ## How to use
 
-### Installation
+### Installation for using as a producer
 
 #### [Via npm](https://www.npmjs.com/package/@coffeebeanslabs/notif-engine)
 
@@ -31,6 +31,25 @@ $ npm i @coffeebeanslabs/notif-engine
 ```shell
 $ yarn add @coffeebeanslabs/notif-engine
 ```
+
+### Installation for using as a consumer process
+
+#### Setting up the consumer process
+```shell
+$ git@github.com:CoffeeBeansLabs/notif-engine.git && cd notif-engine && npm install
+```
+or
+```shell
+$ https://github.com/CoffeeBeansLabs/notif-engine.git && cd notif-engine && npm install
+```
+
+
+
+#### Turning on the consumer process
+
+>
+>SESHOST="<amazonses_host>" SESPORT=<amazonses_port> SESISSECURE=<amazonses_is_secure_flag_integer_0_or_1> SESUSER="<amazonses_user>" SESPASS="<amazonses_password>" OSAPPID="<onesignal_appid>" OSAPIKEY="<onesignal_apikey>" MONGOURL="<your_mongourl_or_mongoclusterurls>" node consumer/app.js
+>
 
 ### Concepts for entities involved
 
@@ -108,12 +127,6 @@ db.getCollection('<schema_name_here>').insertOne({
     "is_enabled" : 1
 });
 ```
-
-### Turning on the notif-engine consumer process
-
->
->SESHOST="<amazonses_host>" SESPORT=<amazonses_port> SESISSECURE=<amazonses_is_secure_flag_integer_0_or_1> SESUSER="<amazonses_user>" SESPASS="<amazonses_password>" OSAPPID="<onesignal_appid>" OSAPIKEY="<onesignal_apikey>" MONGOURL="<your_mongourl_or_mongoclusterurls>" node consumer/app.js
->
 
 ## Contributing
 
