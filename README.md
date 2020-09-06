@@ -123,9 +123,18 @@ $ https://github.com/CoffeeBeansLabs/notif-engine.git && cd notif-engine && npm 
 #### Setting up the consumer process
 
 - Create a new file at `consumer/configurations/configuration.json` manually or by copy pasting and editing the contents of `consumer/configurations/configuration.template.json`
-- Be sure to mention the `<database_name_here>` and `<schema_name_here>` in the file
+- Be sure to at least update the `<database_name_here>`, `<schema_name_here>` and `'Full Name' <email@address.com>` in the file
 - You are now ready to turn on the consumer process
-
+- The `batch_size` is for the quantum of messages being read in a single read for sending
+- The `max_retries` is for the number of attempts being done while sending, if the sending fails
+- As a rule of thumb, for all schemas the meaning of the statuses is as below :
+  - `-2` = `SENDING_FAILED`
+  - `-1` = `NOT_PROCESSED` // The default which has to be set for produced notifications to get created and then sent
+  - `0` = `PROCESSING`  
+  - `1` = `SENDING_SUCCEEDED`
+- As a rule of thumb, for all schemas the meaning of the enabled_flags is as below :
+  - `1` = `ENABLED`
+  - `0` = `DISABLED`
 
 #### Turning on the consumer process
 
