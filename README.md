@@ -139,7 +139,7 @@ $ https://github.com/CoffeeBeansLabs/notif-engine.git && cd notif-engine && npm 
 - Push output for the ```en``` push template below
 ![notif-engine-push-template-preview](https://raw.githubusercontent.com/CoffeeBeansLabs/notif-engine/master/meta/img/notif-engine-push-template-preview.png)
 - Setting up test data for templates manually
-  - ```<schema_name_here>``` is the collection which stores templates data and has to be configured in ```consumer/configurations/configuration.json``` for using the module
+  - ```<schema_name_here>``` is the collection which stores templates data and has to be configured in ```consumer/configurations/configuration.json base.template.schema_name``` for using the module
   - ```slug``` identifier for the template, as database primary keys/id keys may change but this will always be consistent for retrieval
   - ```name``` human readable string for describing the template
   - ```inapp_template``` inapp notification template for the template in consideration
