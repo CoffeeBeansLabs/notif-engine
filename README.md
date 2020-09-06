@@ -120,6 +120,11 @@ or
 $ https://github.com/CoffeeBeansLabs/notif-engine.git && cd notif-engine && npm install
 ```
 
+#### Setting up the consumer process
+
+- Create a new file at `consumer/configurations/configuration.json` manually or by copy pasting and editing the contents of `consumer/configurations/configuration.template.json`
+- Be sure to mention the `<database_name_here>` and `<schema_name_here>` in the file
+- You are now ready to turn on the consumer process
 
 
 #### Turning on the consumer process
@@ -129,6 +134,14 @@ $ https://github.com/CoffeeBeansLabs/notif-engine.git && cd notif-engine && npm 
 >
 
 ### Concepts for entities involved
+
+#### tl;dr
+
+- Templates form the base content layout for all the channels and are prerequisite for the `notif-engine` to work
+- Transactions are produced from your code into the `notif-engine` to have enough data to produce the actual notifications for respective channels
+- `notif-engine` runs and creates respective channel notifications (`email` | `push`) in their specified schemas
+- For producer, the configuration is passed as parameters to the function calls
+- For consumer, the `consumer/configurations/configuration.json` is the base for the configuration and the consumer process works on this. This file is to be created manually before turning on the consumer process and a template is available for the same at `consumer/configurations/configuration.template.json`
 
 #### Templates
 
